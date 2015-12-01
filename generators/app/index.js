@@ -32,8 +32,8 @@ module.exports = yeoman.generators.Base.extend({
       this.templatePath('dummyfile.txt'),
       this.destinationPath('dummyfile.txt')
     );
-    this.fetch("https://codeload.github.com/phodal-archive/echeveria-deploy/zip/master", "./", function(){
-      console.log("Get Builder Code...");
+    this.remote("https://codeload.github.com/phodal-archive/echeveria-deploy/zip/master", function(err, remote){
+      remote.copy('.', 'builder');
     })
   },
 
