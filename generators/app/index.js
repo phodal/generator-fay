@@ -28,14 +28,14 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    this.fs.copy(
-      this.templatePath('README.md'),
-      this.destinationPath('README.md')
-    );
+    this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
+    this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
+
     var that = this;
-    this.fetch("https://codeload.github.com/phodal-archive/echeveria-deploy/zip/master", "./", function(){
+    this.fetch("https://codeload.github.com/phodal-archive/echeveria-deploy/zip/master", "master.zip", function () {
       console.log("Get Builder Code...");
-      that.extract("master", "builder", function(err){
+      that.extract("master.zip", "builder", function (err) {
+        console.log(err);
         console.log("Extract ....");
       })
 
