@@ -29,13 +29,13 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath('README.md'),
+      this.destinationPath('README.md')
     );
     var that = this;
     this.fetch("https://codeload.github.com/phodal-archive/echeveria-deploy/zip/master", "./", function(){
       console.log("Get Builder Code...");
-      this.extract("master", "builder", function(err){
+      that.extract("master", "builder", function(err){
         console.log("Extract ....");
       })
 
