@@ -34,7 +34,7 @@ module.exports = yeoman.generators.Base.extend({
     var that = this;
     this.fetch("https://codeload.github.com/phodal-archive/echeveria-deploy/zip/master", "master.zip", function () {
       console.log("Get Builder Code...");
-      that.extract("master.zip", "builder", function (err) {
+      that.extract("master.zip", "builder/", function (err) {
         console.log(err);
         console.log("Extract ....");
       })
