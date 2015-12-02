@@ -1,6 +1,5 @@
 'use strict';
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
@@ -34,27 +33,23 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     this.fs.copy([
-        this.templatePath() + '/fay-builder/**', this.templatePath() + '/fay-builder/**/.*'],
+      this.templatePath() + '/fay-builder/**', this.templatePath() + '/fay-builder/**/.*'],
       this.destinationPath('builder/')
     );
 
     this.fs.copy([
-        this.templatePath() + '/fay-content/**', this.templatePath() + '/fay-content/**/.*'],
+      this.templatePath() + '/fay-content/**', this.templatePath() + '/fay-content/**/.*'],
       this.destinationPath('content/')
     );
 
     this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
     this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
 
-    if(this.props.mobile) {
+    if (this.props.mobile) {
       this.fs.copy([
-          this.templatePath() + '/fay-mobile/**', this.templatePath() + '/fay-mobile/**/.*'],
+        this.templatePath() + '/fay-mobile/**', this.templatePath() + '/fay-mobile/**/.*'],
         this.destinationPath('mobile/')
       );
-    }
-
-    if(this.props.editor) {
-      console.log("======================");
     }
   },
 
