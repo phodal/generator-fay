@@ -29,19 +29,12 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     this.fs.copy([
-        this.templatePath() + '/fay-builder/**',
-        this.templatePath() + '/fay-builder/**/.*',
-        '!fay-builder/**/{gulpfile.js,bower.json,package.json,.git,.npmignore,.gitignore,wct.conf.js,docs,test}/**'],
+      this.templatePath() + '/fay-builder/**', this.templatePath() + '/fay-builder/**/.*'],
       this.destinationPath('builder/')
     );
 
     this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
     this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
-
-    this.fs.copy(
-      this.templatePath('fay-builder/package.json'),
-      this.destinationPath('builder/package.json')
-    );
   },
 
   install: function () {
