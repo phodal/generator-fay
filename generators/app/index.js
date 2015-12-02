@@ -30,9 +30,9 @@ module.exports = yeoman.generators.Base.extend({
   writing: function () {
     this.fs.copy([
         this.templatePath() + 'fay-builder/**',
-        this.templatePath() + 'builder/**/.*',
+        this.templatePath() + 'fay-builder/**/.*',
         '!**/{gulpfile.js,bower.json,package.json,.git,.npmignore,.gitignore,wct.conf.js,docs,test}/**'],
-      this.destinationPath()
+      this.destinationPath('builder/')
     );
 
     this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
