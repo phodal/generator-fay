@@ -1,10 +1,9 @@
 {
   "name": "Fay",
   "description": "Fay",
-  "repository": {
-
-  },
+  "repository": {},
   "dependencies": {
-
+    "cordova": "^5.4.1",
+    "ionic": "^1.7.10"
   }
 }

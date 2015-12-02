@@ -9,14 +9,19 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the gnarly ' + chalk.red('generator-fay') + ' generator!'
+      'Welcome to use Fay !'
     ));
 
     var prompts = [{
       type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      name: 'mobile',
+      message: 'Would you like to enable to add mobile app?',
+      default: false
+    }, {
+      type: 'confirm',
+      name: 'editor',
+      message: 'Would you like to enable to add editor?',
+      default: false
     }];
 
     this.prompt(prompts, function (props) {
@@ -29,15 +34,26 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     this.fs.copy([
-      this.templatePath() + '/fay-builder/**', this.templatePath() + '/fay-builder/**/.*'],
+        this.templatePath() + '/fay-builder/**', this.templatePath() + '/fay-builder/**/.*'],
       this.destinationPath('builder/')
     );
 
     this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
     this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
+
+    if(this.props.mobile) {
+      this.fs.copy([
+          this.templatePath() + '/fay-mobile/**', this.templatePath() + '/fay-mobile/**/.*'],
+        this.destinationPath('mobile/')
+      );
+    }
+
+    if(this.props.editor) {
+      console.log("======================");
+    }
   },
 
   install: function () {
-    this.installDependencies();
+    this.installDependencies({bower: false});
   }
 });
