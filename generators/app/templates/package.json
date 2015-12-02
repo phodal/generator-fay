@@ -2,6 +2,7 @@
   "name": "Fay",
   "description": "Fay",
   "repository": {},
+  "license": "MIT",
   "dependencies": {
     "cordova": "^5.4.1",
     "ionic": "^1.7.10"
