@@ -38,6 +38,11 @@ module.exports = yeoman.generators.Base.extend({
       this.destinationPath('builder/')
     );
 
+    this.fs.copy([
+        this.templatePath() + '/fay-content/**', this.templatePath() + '/fay-content/**/.*'],
+      this.destinationPath('content/')
+    );
+
     this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
     this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
 

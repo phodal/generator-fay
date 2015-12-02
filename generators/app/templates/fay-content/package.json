@@ -1,0 +1,23 @@
+{
+  "name": "echeveria-content",
+  "version": "1.0.0",
+  "description": "Echeveria Content",
+  "main": "index.js",
+  "dependencies": {
+    "travis-ci": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phodal-archive/echeveria-content.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phodal-archive/echeveria-content/issues"
+  },
+  "homepage": "https://github.com/phodal-archive/echeveria-content#readme"
+}
